@@ -1,0 +1,10 @@
+﻿@model CS_1._0.ViewModels.RecordViewModel
+
+@foreach (var reccord in Model.Records)
+{
+    <li>
+        <h1>@reccord.RecordHeader</h1>
+        <h3>@reccord.RecordDetails</h3>
+        <h5>@reccord.Category.CategoryName</h5>
+    </li>
+}
