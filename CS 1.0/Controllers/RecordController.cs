@@ -37,6 +37,8 @@ namespace CS_1._0.Controllers
             return View(new RecordViewModel { Records = records, CurrentCategory = currentCategory });
         }
 
+
+
         public IActionResult Details(int id)
         {
             var record = _recordRepository.GetRecordByRecordId(id);

@@ -1,10 +1,8 @@
 ﻿@model CS_1._0.ViewModels.RecordViewModel
 
-@foreach (var reccord in Model.Records)
+@for(int i=0; i<Model.Records.Count();i++)
 {
     <li>
-        <h1>@reccord.RecordHeader</h1>
-        <h3>@reccord.RecordDetails</h3>
-        <h5>@reccord.Category.CategoryName</h5>
+        <a asp-controller="Record" asp-action="@Model.CurrentType.Trim()"/>
     </li>
 }

@@ -3,14 +3,16 @@ using CS_1._0.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CS_1._0.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200204121241_InitRecordTypes")]
+    partial class InitRecordTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,28 +77,6 @@ namespace CS_1._0.Migrations
                     b.HasKey("RecordTypeId");
 
                     b.ToTable("RecordTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            RecordTypeId = 1,
-                            RecordTypeName = "Slider"
-                        },
-                        new
-                        {
-                            RecordTypeId = 2,
-                            RecordTypeName = "Header and text"
-                        },
-                        new
-                        {
-                            RecordTypeId = 3,
-                            RecordTypeName = "Text and image on the left"
-                        },
-                        new
-                        {
-                            RecordTypeId = 4,
-                            RecordTypeName = "Text and image on the right"
-                        });
                 });
 
             modelBuilder.Entity("CS_1._0.Models.Record", b =>

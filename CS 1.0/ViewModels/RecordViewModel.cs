@@ -10,5 +10,6 @@ namespace CS_1._0.ViewModels
     {
         public IEnumerable<Record> Records { get; set; }
         public string CurrentCategory { get; set; }
+        public string CurrentType { get; set; }
     }
 }
