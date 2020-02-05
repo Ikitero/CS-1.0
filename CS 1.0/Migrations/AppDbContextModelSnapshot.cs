@@ -52,51 +52,14 @@ namespace CS_1._0.Migrations
                     b.Property<string>("RecordImage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RecordTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("RecordType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("RecordId");
 
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Records");
-                });
-
-            modelBuilder.Entity("CS_1._0.Models.RecordType", b =>
-                {
-                    b.Property<int>("RecordTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("RecordTypeName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("RecordTypeId");
-
-                    b.ToTable("RecordTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            RecordTypeId = 1,
-                            RecordTypeName = "Slider"
-                        },
-                        new
-                        {
-                            RecordTypeId = 2,
-                            RecordTypeName = "Header and text"
-                        },
-                        new
-                        {
-                            RecordTypeId = 3,
-                            RecordTypeName = "Text and image on the left"
-                        },
-                        new
-                        {
-                            RecordTypeId = 4,
-                            RecordTypeName = "Text and image on the right"
-                        });
                 });
 
             modelBuilder.Entity("CS_1._0.Models.Record", b =>

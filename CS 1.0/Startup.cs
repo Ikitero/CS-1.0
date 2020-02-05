@@ -29,6 +29,7 @@ namespace CS_1._0
             services.AddHttpContextAccessor();
             services.AddSession();
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,13 +40,15 @@ namespace CS_1._0
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseRouting();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Record}/{action=List}/{id?}");
             });
         }
     }

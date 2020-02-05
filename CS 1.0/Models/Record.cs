@@ -13,7 +13,7 @@ namespace CS_1._0.Models
         public string RecordImage { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int RecordTypeId { get; set; }
+        public string RecordType { get; set; }
 
     }
 }

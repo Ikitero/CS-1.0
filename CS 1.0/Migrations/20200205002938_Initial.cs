@@ -2,7 +2,7 @@
 
 namespace CS_1._0.Migrations
 {
-    public partial class initDb : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace CS_1._0.Migrations
                 {
                     CategoryId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<int>(nullable: false)
+                    CategoryName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,7 +28,8 @@ namespace CS_1._0.Migrations
                     RecordHeader = table.Column<string>(nullable: true),
                     RecordDetails = table.Column<string>(nullable: true),
                     RecordImage = table.Column<string>(nullable: true),
-                    CategoryId = table.Column<int>(nullable: false)
+                    CategoryId = table.Column<int>(nullable: false),
+                    RecordType = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

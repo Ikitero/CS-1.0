@@ -37,7 +37,16 @@ namespace CS_1._0.Controllers
             return View(new RecordViewModel { Records = records, CurrentCategory = currentCategory });
         }
 
-
+        public IActionResult AddRecord()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddRecord(Record record)
+        {
+            _recordRepository.CreateRecord(record);
+            return View();
+        }
 
         public IActionResult Details(int id)
         {

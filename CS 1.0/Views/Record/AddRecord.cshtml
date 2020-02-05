@@ -1,0 +1,44 @@
+﻿@model Record
+
+    <form asp-action="AddRecord" method="post">
+        <div class="form-group">
+            <label asp-for="RecordHeader" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="RecordHeader" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RecordDetails" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="RecordDetails" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RecordImage" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="RecordImage" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CategoryId" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="CategoryId" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RecordType" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <select asp-for="RecordType">
+                    <option value="_LeftImg">Text and image on the left</option>
+                    <option value="_RightImg">Text and image on the right</option>
+                    <option value="_WithoutImg">Only header and text</option>
+                    <option value="_Slider">Slider</option>
+                </select>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add" />
+    </form>

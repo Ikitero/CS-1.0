@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CS_1._0.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200203224227_initDb")]
-    partial class initDb
+    [Migration("20200205002938_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,8 +27,8 @@ namespace CS_1._0.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryName")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoryId");
 
@@ -54,6 +54,9 @@ namespace CS_1._0.Migrations
                     b.Property<string>("RecordImage")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RecordType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("RecordId");
 
                     b.HasIndex("CategoryId");
@@ -63,7 +66,7 @@ namespace CS_1._0.Migrations
 
             modelBuilder.Entity("CS_1._0.Models.Record", b =>
                 {
-                    b.HasOne("CS_1._0.Models.Category", null)
+                    b.HasOne("CS_1._0.Models.Category", "Category")
                         .WithMany("Records")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
