@@ -16,5 +16,6 @@ namespace CS_1._0.Models
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Record> Records { get; set; }
+
     }
 }
