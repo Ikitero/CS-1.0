@@ -10,6 +10,6 @@ namespace CS_1._0.Models
         IEnumerable<Record> Records {get;}
         Record GetRecordByRecordId(int recordId);
         void CreateRecord(Record record);
-        void RemoveRecord(Record record);
+        void RemoveRecord(int recordId);
     }
 }

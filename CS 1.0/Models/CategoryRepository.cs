@@ -20,6 +20,7 @@ namespace CS_1._0.Models
             _appDbContext.SaveChanges();
         }
 
+
         public void RemoveCategory(Category category)
         {
             _appDbContext.Categories.Remove(category);

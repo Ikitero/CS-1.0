@@ -48,6 +48,17 @@ namespace CS_1._0.Controllers
             return View();
         }
 
+        public IActionResult RemoveRecord()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult RemoveRecord(int recordId)
+        {
+            _recordRepository.RemoveRecord(recordId);
+            return View("List");
+        }
+
         public IActionResult Details(int id)
         {
             var record = _recordRepository.GetRecordByRecordId(id);

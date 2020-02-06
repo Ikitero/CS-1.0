@@ -25,8 +25,9 @@ namespace CS_1._0.Models
             return _appDbContext.Records.FirstOrDefault(r => r.RecordId == recordId);
         }
 
-        public void RemoveRecord(Record record)
+        public void RemoveRecord(int recordId)
         {
+            var record = _appDbContext.Records.Single(r => r.RecordId == recordId);
             _appDbContext.Records.Remove(record);
             _appDbContext.SaveChanges();
         }

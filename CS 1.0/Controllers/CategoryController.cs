@@ -30,6 +30,12 @@ namespace CS_1._0.Controllers
             return RedirectToAction("AddingComplete");
         }
 
+        public IActionResult AddingComplete()
+        {
+            ViewBag.CompleteMessage = "Category was succesfully created!";
+            return View("AddingComplete");
+        }
+
         [HttpPost]
         public IActionResult RemoveCategory(Category category)
         {
