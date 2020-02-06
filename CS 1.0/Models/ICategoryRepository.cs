@@ -9,6 +9,6 @@ namespace CS_1._0.Models
     {
         IEnumerable<Category> AllCategories { get; }
         public void AddCategory(Category category);
-        public void RemoveCategory(Category category);
+        public void RemoveCategory(int categoryId);
     }
 }

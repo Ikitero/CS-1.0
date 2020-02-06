@@ -16,15 +16,24 @@ namespace CS_1._0.Models
 
         public void AddCategory(Category category)
         {
-            _appDbContext.Categories.Add(category);
-            _appDbContext.SaveChanges();
+            var categories = _appDbContext.Categories.ToList();
+            var temp = categories.Where(c => c.CategoryName == category.CategoryName).ToList();
+            if (temp==null)
+            {
+                _appDbContext.Categories.Add(category);
+                _appDbContext.SaveChanges();
+            }
         }
 
 
-        public void RemoveCategory(Category category)
+        public void RemoveCategory(int categoryId)
         {
-            _appDbContext.Categories.Remove(category);
-            _appDbContext.SaveChanges();
+            var category = _appDbContext.Categories.Single(c => c.CategoryId == categoryId);
+            if (category != null)
+            {
+                _appDbContext.Categories.Remove(category);
+                _appDbContext.SaveChanges();
+            }
         }
     }
 }

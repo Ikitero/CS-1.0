@@ -6,6 +6,7 @@ using CS_1._0.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,8 +25,11 @@ namespace CS_1._0
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IRecordRepository, RecordRepository>();
+
             services.AddHttpContextAccessor();
             services.AddSession();
             services.AddControllersWithViews();
@@ -49,6 +53,7 @@ namespace CS_1._0
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Record}/{action=List}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

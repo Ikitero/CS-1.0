@@ -9,6 +9,7 @@ namespace CS_1._0.ViewModels
     public class RecordViewModel
     {
         public IEnumerable<Record> Records { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
         public string CurrentCategory { get; set; }
     }
 }

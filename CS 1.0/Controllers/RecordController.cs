@@ -56,7 +56,7 @@ namespace CS_1._0.Controllers
         public IActionResult RemoveRecord(int recordId)
         {
             _recordRepository.RemoveRecord(recordId);
-            return View("List");
+            return View("RemoveRecord");
         }
 
         public IActionResult Details(int id)

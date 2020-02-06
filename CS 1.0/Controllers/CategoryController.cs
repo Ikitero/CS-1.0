@@ -27,7 +27,7 @@ namespace CS_1._0.Controllers
         public IActionResult AddCategory(Category category)
         {
             _categoryRepository.AddCategory(category);
-            return RedirectToAction("AddingComplete");
+            return View();
         }
 
         public IActionResult AddingComplete()
@@ -36,11 +36,17 @@ namespace CS_1._0.Controllers
             return View("AddingComplete");
         }
 
-        [HttpPost]
-        public IActionResult RemoveCategory(Category category)
+        public IActionResult RemoveCategory()
         {
-            _categoryRepository.RemoveCategory(category);
-            return View();
+            var model = _categoryRepository.AllCategories;
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult RemoveCategory(int categoryId)
+        {
+            _categoryRepository.RemoveCategory(categoryId);
+            var model = _categoryRepository.AllCategories;
+            return View(model);
         }
     }
 }

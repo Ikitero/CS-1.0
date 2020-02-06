@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Category>
+
+@foreach (var category in @Model)
+{
+    <h3>@category.CategoryName</h3>
+    <form method="post" asp-controller="Category" asp-action="RemoveCategory" asp-route-categoryId="@category.CategoryId">
+        <input type="submit" value="Delete" />
+    </form>
+}

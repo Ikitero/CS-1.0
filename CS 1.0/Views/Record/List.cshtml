@@ -1,7 +1,9 @@
 ﻿@model RecordViewModel
 
-<h1>List page Check!</h1>
 @foreach (var record in Model.Records)
 {
     <partial name="@record.RecordType" model="record" />
+    <form method="post" asp-controller="Record" asp-action="RemoveRecord" asp-route-recordId="@record.RecordId ">
+        <input type="submit" value="Delete" />
+    </form>
 }
