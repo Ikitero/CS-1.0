@@ -1,0 +1,8 @@
+﻿@model IEnumerable<CS_1._0.Models.User>
+
+<h2>Users</h2>
+@foreach (var user in Model)
+{
+    <h5>@user.Email</h5>
+    <a asp-action="Edit" asp-route-userId="@user.Id">Assign role</a>
+}

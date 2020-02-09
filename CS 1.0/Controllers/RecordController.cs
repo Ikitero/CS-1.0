@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CS_1._0.Models;
 using CS_1._0.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CS_1._0.Controllers
@@ -36,29 +37,31 @@ namespace CS_1._0.Controllers
             }
             return View(new RecordViewModel { Records = records, CurrentCategory = currentCategory });
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult AddRecord()
         {
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddRecord(Record record)
         {
             _recordRepository.CreateRecord(record);
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult RemoveRecord()
         {
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult RemoveRecord(int recordId)
         {
             _recordRepository.RemoveRecord(recordId);
             return View("RemoveRecord");
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Details(int id)
         {
             var record = _recordRepository.GetRecordByRecordId(id);

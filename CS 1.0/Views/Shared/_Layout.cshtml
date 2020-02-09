@@ -16,13 +16,16 @@
             <div class="container">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-
                         <li><a asp-controller="Record" asp-action="List">List</a></li>
                         @await Component.InvokeAsync("CategoryMenu")
-                        <li><a asp-controller="Record" asp-action="AddRecord">Add Record</a></li>
-                        <li><a asp-controller="Category" asp-action="AddCategory">Add Category</a></li>
-                        <li><a asp-controller="Category" asp-action="RemoveCategory">Remove Category</a></li>
-                        <partial name="_LoginPartial" />
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li><a asp-controller="Record" asp-action="AddRecord">Add Record</a></li>
+                            <li><a asp-controller="Category" asp-action="AddCategory">Add Category</a></li>
+                            <li><a asp-controller="Category" asp-action="RemoveCategory">Remove Category</a></li>
+                            <li><a asp-controller="Roles" asp-action="Index">Roles managment</a></li>
+                        }
+                        <li><partial name="_LoginPartial" /></li>
                     </ul>
                 </div>
             </div>

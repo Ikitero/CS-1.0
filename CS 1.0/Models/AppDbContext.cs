@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CS_1._0.Models
 {
-    public class AppDbContext : IdentityDbContext<IdentityUser>
+    public class AppDbContext : IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
@@ -16,6 +16,6 @@ namespace CS_1._0.Models
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Record> Records { get; set; }
-
+        public DbSet<User> Users { get; set; }
     }
 }
