@@ -165,3 +165,9 @@ C:\Users\ololo\Source\Repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Areas\Id
 C:\Users\ololo\Source\Repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\ololo\Source\Repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\CS 1.0.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ololo\Source\Repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\CS 1.0.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ololo\source\repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Index.cshtml.g.cs
+C:\Users\ololo\source\repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Create.cshtml.g.cs
+C:\Users\ololo\source\repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Views\Roles\UserList.cshtml.g.cs
+C:\Users\ololo\source\repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\ololo\source\repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\ololo\source\repos\CS-1.0\CS 1.0\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Edit.cshtml.g.cs
